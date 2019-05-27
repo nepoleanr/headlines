@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Headlines</title>
+    </head>
+<body>
+    <h1>Headlines</h1>
+    <br>
+        <label for=""> RSS feeds available for BBC, NDTV, CNN, Fox, TimesNow, and DailyMail. Enter the name of the required news site to get its news. </label>
+        <form method="POST">
+            <input type="text" name="publication" placeholder="search" />
+            <input type="submit" value="Submit" />
+        </form>
+
+    {% for article in articles %}
+    <b><a href="{{article.link}}">{{article.title}}</a></b><br />
+    <i>{{article.published}}</i><br />
+    <p>{{article.summary}}</p>
+    <hr />
+    {% endfor %}
+    </body>
+</html>
